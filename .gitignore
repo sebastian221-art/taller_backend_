@@ -1,0 +1,25 @@
+# Build results
+bin/
+obj/
+out/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# VS Code settings
+.vscode/
+
+# Docker volumes
+postgres_data/
+trabajoefs_data/
+
+# Logs
+*.log
+
+# NuGet
+*.nupkg
+*.snupkg
+packages/

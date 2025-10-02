@@ -1,4 +1,5 @@
 using Api.DTOs;
+using Api.DTOs.Company;
 using FluentValidation;
 
 namespace Api.Validators;

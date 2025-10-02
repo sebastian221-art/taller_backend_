@@ -1,4 +1,5 @@
 using Api.DTOs;
+using Api.DTOs.City;
 using FluentValidation;
 
 namespace Api.Validators;
