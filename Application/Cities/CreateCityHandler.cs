@@ -1,0 +1,25 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Application.Abstractions;
+using Domain.Entities;
+using MediatR;
+
+namespace Application.Cities;
+
+public sealed class CreateCityHandler(ICityRepository repo, Application.Abstractions.IUnitOfWork unitOfWork) : IRequestHandler<CreateCity, Guid>
+{
+    public async Task<Guid> Handle(CreateCity req, CancellationToken ct)
+    {
+        var city = new City(req.Name)
+        {
+            RegionId = req.RegionId
+        };
+
+        await repo.AddAsync(city, ct);
+        
+        await unitOfWork.SaveChangesAsync(ct);
+return city.Id;
+    }
+}
